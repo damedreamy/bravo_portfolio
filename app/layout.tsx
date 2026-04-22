@@ -18,7 +18,7 @@ export default function RootLayout({
 
       <body className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white min-h-screen">
 
-
+        {/* HEADER */}
         <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-900/70 border-b border-white/10">
           <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
@@ -28,17 +28,18 @@ export default function RootLayout({
               Rencess
             </p>
 
-
+            {/* NAV LINKS */}
             <div className="hidden md:flex items-center gap-8 text-sm">
               <Link href="/" className="hover:text-blue-400 transition">
                 Home
               </Link>
+              <Link href="/aboutMe" className="hover:text-blue-400 transition">
+                About Me
+              </Link>
               <Link href="/projects" className="hover:text-blue-400 transition">
                 My Projects
               </Link>
-              <Link href="/about" className="hover:text-blue-400 transition">
-                About Me
-              </Link>
+
               <Link href="/contact" className="hover:text-blue-400 transition">
                 Contact Me
               </Link>
@@ -47,7 +48,7 @@ export default function RootLayout({
           </div>
         </nav>
 
-
+        {/* PAGE CONTENT */}
         <main className="pt-20 flex-grow">
           {children}
         </main>

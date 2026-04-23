@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Bravo Portfolio",
-};
-
-
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Dame's Portfolio",
+};
 
 export default function RootLayout({
   children,
@@ -15,32 +14,31 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-
-      <body className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white min-h-screen">
-
-        {/* HEADER */}
-        <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-900/70 border-b border-white/10">
-          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <body className="bg-black text-white min-h-screen flex flex-col relative overflow-x-hidden">
 
 
+        {/* NAVBAR */}
+        <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
+          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-7">
 
-            <p className="text-xl font-bold text-blue-400 tracking-wide">
-              Rencess
+            {/* BRAND */}
+            <p className="text-xl font-bold tracking-wide bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+              {"</> Dame's Portfolio"}
             </p>
 
             {/* NAV LINKS */}
             <div className="hidden md:flex items-center gap-8 text-sm">
-              <Link href="/" className="hover:text-blue-400 transition">
+              <Link href="/#hero" className="hover:text-pink-400 transition">
                 Home
               </Link>
-              <Link href="/aboutMe" className="hover:text-blue-400 transition">
+              <Link href="/#about" className="hover:text-purple-400 
+              transition">
                 About Me
               </Link>
-              <Link href="/projects" className="hover:text-blue-400 transition">
+              <Link href="/#projects" className="hover:text-cyan-400 transition">
                 My Projects
               </Link>
-
-              <Link href="/contact" className="hover:text-blue-400 transition">
+              <Link href="/#contact" className="hover:text-pink-400 transition">
                 Contact Me
               </Link>
             </div>
@@ -49,12 +47,12 @@ export default function RootLayout({
         </nav>
 
         {/* PAGE CONTENT */}
-        <main className="pt-20 flex-grow">
+        <main className="pt-20 flex-grow relative z-10">
           {children}
         </main>
 
-
-        <footer className="p-4 border-t border-white/10 text-center text-sm text-gray-300">
+        {/* FOOTER */}
+        <footer className="p-6 border-t border-white/10 text-center text-sm text-gray-400 backdrop-blur-md bg-black/40 relative z-10">
           © 2026 Rencess Portfolio
         </footer>
 

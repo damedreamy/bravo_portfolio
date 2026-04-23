@@ -7,243 +7,179 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
   return (
-    <main
-      id="projects"
-      className="min-h-screen px-6 md:px-20 py-20 text-white"
-    >
+    <main className="min-h-screen px-6 md:px-20 py-24 bg-black text-white relative overflow-hidden">
 
-      <div className="max-w-4xl mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3">
-          My Projects
-        </h2>
-        <p className="text-gray-300">
-          Here are some of the projects I’ve worked on.
-        </p>
-      </div>
+      <div className="absolute top-[-150px] left-[-150px] w-[450px] h-[450px] bg-pink-500/20 blur-[150px] rounded-full"></div>
+      <div className="absolute bottom-[-150px] right-[-150px] w-[450px] h-[450px] bg-cyan-400/20 blur-[150px] rounded-full"></div>
 
+      <div className="max-w-6xl mx-auto relative z-10">
 
-      <div className="grid md:grid-cols-2 gap-8">
-
-        {/* PROJECT 1 */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition">
-
-          <div className="relative w-full h-52">
-            <Image
-              src="/myPortfolio.jpg"
-              alt="My First Portfolio"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="p-5 space-y-3">
-            <h3 className="text-xl font-semibold text-blue-400">
-              My First Portfolio
-            </h3>
-
-            <p className="text-gray-300 text-sm">
-              A responsive portfolio website built with Next.js and Tailwind CSS.
-            </p>
-
-            <p className="text-xs text-gray-400">
-              Languages: Next.js, Tailwind
-            </p>
-
-            <button
-              onClick={() =>
-                setSelectedProject({
-                  title: "My First Portfolio",
-                  description:
-                    "A responsive portfolio website built with Next.js and Tailwind CSS.",
-                  problem: "Needed a personal website to showcase skills.",
-                  solution:
-                    "Built using Next.js and Tailwind with responsive design.",
-                  tech: "Next.js, Tailwind",
-                  link:
-                    "https://bravo-nextjs-portfolio-h6mrsg0lc.vercel.app/",
-                })
-              }
-              className="mt-3 bg-pink-600 px-4 py-2 rounded hover:bg-pink-700"
-            >
-              Read More
-            </button>
-          </div>
+        {/* HEADER */}
+        <div className="mb-14">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+            My Projects
+          </h2>
+          <p className="text-gray-400 mt-3 max-w-xl">
+            A collection of projects showcasing my skills in development, design, and problem solving.
+          </p>
         </div>
 
-        {/* PROJECT 2 */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition">
+        <div className="grid md:grid-cols-3 gap-8">
 
-          <div className="relative w-full h-52">
-            <Image
-              src="/groceryApp.jpg"
-              alt="Grocery App"
-              fill
-              className="object-cover"
-            />
-          </div>
+          {[
 
-          <div className="p-5 space-y-3">
-            <h3 className="text-xl font-semibold text-blue-400">
-              Grocery Cart App
-            </h3>
+            {
+              title: "My First Portfolio",
+              img: "/myPortfolio.jpg",
+              desc: "A responsive portfolio built with Next.js and Tailwind CSS.",
+              tech: "Next.js, Tailwind",
+              problem: "Lacked experience structuring a full responsive site.",
+              solution: "Built modular components with responsive layouts.",
+              link: "https://bravo-nextjs-portfolio-h6mrsg0lc.vercel.app/",
+            },
 
-            <p className="text-gray-300 text-sm">
-              A mobile app for managing grocery lists.
-            </p>
+            {
+              title: "Grocery Cart App",
+              img: "/groceryApp.jpg",
+              desc: "A mobile app for managing grocery lists.",
+              tech: "Flutter, Firebase",
+              problem: "Firebase integration issues for real-time syncing.",
+              solution: "Implemented real-time database structure properly.",
+              link: "https://flutlab.io/editor/9c5e9a06-0449-42ac-8f06-1cb2fc5532e9",
+            },
 
-            <p className="text-xs text-gray-400">
-              Flutter, Firebase
-            </p>
+            {
+              title: "Cignal Database Project",
+              img: "/cignaldb.jpg",
+              desc: "SQL database design for a company system.",
+              tech: "MySQL, SSMS",
+              problem: "Data redundancy due to poor normalization.",
+              solution: "Refactored schema using normalization principles.",
+              link: "#",
+            },
 
-            <button
-              onClick={() =>
-                setSelectedProject({
-                  title: "Grocery Cart App",
-                  description:
-                    "A mobile app for managing grocery lists.",
-                  problem: "Needed a simple grocery list manager.",
-                  solution: "Built using Flutter and Firebase.",
-                  tech: "Flutter, Firebase",
-                  link:
-                    "https://flutlab.io/editor/9c5e9a06-0449-42ac-8f06-1cb2fc5532e9",
-                })
-              }
-              className="mt-3 bg-pink-600 px-4 py-2 rounded hover:bg-pink-700"
+            {
+              title: "Focus Planner App",
+              img: "/focusPlannerApp.jpg",
+              desc: "UI design for a productivity planner app.",
+              tech: "Figma",
+              problem: "Complex task flow design.",
+              solution: "Simplified UX using clean hierarchy in Figma.",
+              link: "https://github.com/damedreamy/Focus-Planner-Application.git",
+            },
+
+            {
+              title: "Ghostly Adventure Game",
+              img: "/mazeGame.jpg",
+              desc: "A Python-based maze adventure game.",
+              tech: "Python",
+              problem: "Movement and collision logic bugs.",
+              solution: "Debugged core game loop and collision system.",
+              link: "https://github.com/damedreamy/Ghostly-Adventure-Game.git",
+            },
+
+          ].map((project, i) => (
+            <div
+              key={i}
+              className="
+                group relative bg-white/5 backdrop-blur-md
+                border border-white/10 rounded-2xl overflow-hidden
+                hover:scale-[1.02] transition duration-300
+                hover:shadow-[0_0_30px_rgba(236,72,153,0.25)]
+              "
             >
-              Read More
-            </button>
-          </div>
+
+              {/* IMAGE */}
+              <div className="relative w-full h-52 overflow-hidden">
+                <Image
+                  src={project.img}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-5 space-y-3">
+
+                <h3 className="text-xl font-semibold text-pink-400">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-300 text-sm">
+                  {project.desc}
+                </p>
+
+                <p className="text-xs text-cyan-300">
+                  {project.tech}
+                </p>
+
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="
+                    mt-3 px-4 py-2 rounded-xl font-medium
+                    bg-gradient-to-r from-pink-500 to-purple-600
+                    hover:from-purple-600 hover:to-pink-500
+                    transition
+                    shadow-[0_0_15px_rgba(236,72,153,0.4)]
+                  "
+                >
+                  Read More
+                </button>
+
+              </div>
+            </div>
+          ))}
+
         </div>
-
-        {/* PROJECT 3 */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition">
-
-          <div className="relative w-full h-52">
-            <Image
-              src="/cignaldb.jpg"
-              alt="Database Project"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="p-5 space-y-3">
-            <h3 className="text-xl font-semibold text-blue-400">
-              Cignal Database Project
-            </h3>
-
-            <p className="text-gray-300 text-sm">
-              A SQL database design and implementation project for a company.
-            </p>
-
-            <p className="text-xs text-gray-400">
-              MySQL, SQL Server Management Studio
-            </p>
-
-            <button
-              onClick={() =>
-                setSelectedProject({
-                  title: "Cignal Database Project",
-                  description:
-                    "A SQL database design and implementation project for a company.",
-                  problem: "Needed a robust database solution.",
-                  solution:
-                    "Designed and implemented using MySQL and SQL Server Management Studio.",
-                  tech: "MySQL, SQL Server Management Studio",
-                  link: "#",
-                })
-              }
-              className="mt-3 bg-pink-600 px-4 py-2 rounded hover:bg-pink-700"
-            >
-              Read More
-            </button>
-          </div>
-        </div>
-
-        {/* PROJECT 4 */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition">
-
-          <div className="relative w-full h-52">
-            <Image
-              src="/mazeGame.jpg"
-              alt="Maze Game"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="p-5 space-y-3">
-            <h3 className="text-xl font-semibold text-blue-400">
-              Ghostly Adventure Game
-            </h3>
-
-            <p className="text-gray-300 text-sm">
-              A simple Python console-based maze game.
-            </p>
-
-            <p className="text-xs text-gray-400">
-              Python
-            </p>
-
-            <button
-              onClick={() =>
-                setSelectedProject({
-                  title: "Ghostly Adventure Game",
-                  description:
-                    "A simple Python console-based maze game.",
-                  problem: "Needed a fun and engaging game for users.",
-                  solution:
-                    "Built using Python and simple game logic.",
-                  tech: "Python",
-                  link:
-                    "https://github.com/damedreamy/Ghostly-Adventure-Game.git",
-                })
-              }
-              className="mt-3 bg-pink-600 px-4 py-2 rounded hover:bg-pink-700"
-            >
-              Read More
-            </button>
-          </div>
-        </div>
-
       </div>
 
 
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-gray-900 p-6 rounded-xl max-w-lg w-full relative">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 px-4">
+
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl p-6 rounded-2xl max-w-lg w-full relative shadow-[0_0_40px_rgba(236,72,153,0.25)]">
 
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-3 right-3 text-gray-400"
+              className="absolute top-3 right-3 text-gray-400 hover:text-white"
             >
               ✕
             </button>
 
-            <h2 className="text-2xl font-bold text-blue-400 mb-2">
+            <h2 className="text-2xl font-bold text-pink-400 mb-3">
               {selectedProject.title}
             </h2>
 
-            <p className="text-gray-300 mb-3">
-              {selectedProject.description}
+            <p className="text-gray-300 mb-4">
+              {selectedProject.desc}
             </p>
 
             <p className="text-sm text-gray-400 mb-2">
-              <strong>Problem:</strong> {selectedProject.problem}
-            </p>
-
-            <p className="text-sm text-gray-400 mb-2">
-              <strong>Solution:</strong> {selectedProject.solution}
+              <span className="text-white font-semibold">Problem:</span>{" "}
+              {selectedProject.problem}
             </p>
 
             <p className="text-sm text-gray-400 mb-4">
-              <strong>Tech:</strong> {selectedProject.tech}
+              <span className="text-white font-semibold">Solution:</span>{" "}
+              {selectedProject.solution}
+            </p>
+
+            <p className="text-sm text-cyan-300 mb-6">
+              Tech: {selectedProject.tech}
             </p>
 
             <a
               href={selectedProject.link}
               target="_blank"
-              className="inline-block bg-blue-600 px-4 py-2 rounded hover:bg-blue-700"
+              className="
+                inline-block px-5 py-2 rounded-xl font-medium
+                bg-gradient-to-r from-cyan-400 to-pink-500
+                hover:from-pink-500 hover:to-cyan-400
+                transition
+                shadow-[0_0_20px_rgba(34,211,238,0.4)]
+              "
             >
               View Project
             </a>
@@ -251,7 +187,6 @@ export default function Projects() {
         </div>
       )}
 
-      
     </main>
   );
 }

@@ -3,72 +3,89 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <main id="hero" className="text-white">
+      <section className="w-full min-h-screen py-24 bg-black relative overflow-hidden flex items-center">
 
-      {/* HERO */}
-      <section
-        id="home"
-        className="min-h-screen bg-gradient-to-br from-[#0a0a23] via-[#1a0b2e] to-[#020617] flex items-center justify-center px-6"
-      >
-        <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+        <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-pink-500 opacity-20 blur-[150px] rounded-full"></div>
+        <div className="absolute bottom-[-120px] right-[-100px] w-[400px] h-[400px] bg-cyan-400 opacity-20 blur-[150px] rounded-full"></div>
 
-          {/* LEFT */}
-          <div className="space-y-6">
-            <h3 className="text-sm tracking-wide text-pink-400">
-              Welcome to my portfolio!
+        <div className="max-w-[1250px] mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-16 relative z-10">
+
+          {/* LEFT CONTENT */}
+          <div className="flex flex-col gap-6 max-w-[550px] animate-fadeIn">
+
+            <h3 className="font-medium text-sm tracking-widest text-pink-400 uppercase">
+              Welcome to My Portfolio ⚡
             </h3>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Hello, my name’s{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-                Rencess
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(236,72,153,0.7)]">
+                Dame
               </span>
-              .
             </h1>
 
-            <p className="text-gray-300">
-              Web Developer · Mobile App Developer · Database Designer · UI/UX Designer · Network Administrator · Ethical Hacker
+            <p className="text-gray-300 text-base leading-relaxed">
+              Full Stack Developer · Mobile Developer · Database Designer · UI/UX Designer
             </p>
 
-            <div className="flex gap-4 pt-4">
+            {/* BUTTONS */}
+            <div className="flex gap-4 mt-4 flex-wrap">
+
               <a
-                href="/cv.pdf"
+                href="/#projects"
+                className="
+                  relative px-6 py-3 rounded-xl font-medium
+                  bg-gradient-to-r from-purple-600 to-pink-500
+                  hover:from-pink-500 hover:to-purple-600
+                  transition-all duration-300
+                  shadow-[0_0_20px_rgba(168,85,247,0.6)]
+                  hover:shadow-[0_0_30px_rgba(236,72,153,0.9)]
+                "
+              >
+                See my Projects
+              </a>
+
+              <a
+                href="/DAME'S_CV.pdf"
                 download
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"
+                className="
+                  px-6 py-3 rounded-xl font-medium
+                  border border-white/20
+                  backdrop-blur-md bg-white/5
+                  hover:bg-white/10
+                  transition-all duration-300
+                  shadow-[0_0_15px_rgba(255,255,255,0.2)]
+                  hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]
+                "
               >
                 Download CV
               </a>
 
-              <a
-                href="#projects"
-                className="px-6 py-3 rounded-full border border-purple-400 text-purple-300"
-              >
-                View Projects →
-              </a>
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="relative flex justify-center">
-            <div className="absolute w-72 h-72 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 blur-3xl opacity-30"></div>
+          {/* RIGHT PROFILE IMAGE */}
+          <div className="relative animate-fadeUp w-[220px] md:w-[340px] flex justify-center">
 
-            <div className="relative rounded-2xl p-[3px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
-              <div className="bg-[#020617] rounded-2xl p-2">
-                <Image
-                  src="/Bravo.jpg"
-                  alt="Profile"
-                  width={300}
-                  height={300}
-                  className="rounded-xl object-cover"
-                  priority
-                />
-              </div>
-            </div>
+  
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 blur-2xl opacity-60 animate-pulse"></div>
+
+            <Image
+              src="/Bravo.jpg"
+              width={420}
+              height={420}
+              alt="Dame's Profile"
+              className="
+                relative z-10 rounded-full object-cover
+                border border-white/20
+                shadow-[0_0_40px_rgba(236,72,153,0.6)]
+                transition-transform duration-500 hover:scale-105
+              "
+            />
           </div>
 
         </div>
       </section>
-
-      </main>
-
+    </main>
   );
 }

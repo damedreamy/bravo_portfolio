@@ -21,7 +21,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "bravo-portfolio"
+      "service": "rencessdamebravo-portfolio"
     }
   ],
   "images": {

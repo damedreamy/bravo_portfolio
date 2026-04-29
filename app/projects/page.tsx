@@ -7,27 +7,25 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
   return (
-    <main className="min-h-screen px-6 md:px-20 py-24 bg-black text-white relative overflow-hidden">
-
-      <div className="absolute top-[-150px] left-[-150px] w-[450px] h-[450px] bg-pink-500/20 blur-[150px] rounded-full"></div>
-      <div className="absolute bottom-[-150px] right-[-150px] w-[450px] h-[450px] bg-cyan-400/20 blur-[150px] rounded-full"></div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section
+      id="projects"
+      className="min-h-screen px-6 md:px-20 py-24 text-white relative overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto relative z-10 space-y-16">
 
         {/* HEADER */}
-        <div className="mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+        <div className="text-center space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
             My Projects
           </h2>
-          <p className="text-gray-400 mt-3 max-w-xl">
-            A collection of projects showcasing my skills in development, design, and problem solving.
-          </p>
+
+          <p className="text-gray-400 max-w-xl mx-auto">
+ A collection of my projects demonstrating my skills in development, design, and problem-solving.          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-
+        {/* GRID */}
+        <div className="grid md:grid-cols-2 gap-8">
           {[
-
             {
               title: "My First Portfolio",
               img: "/myPortfolio.jpg",
@@ -37,7 +35,6 @@ export default function Projects() {
               solution: "Built modular components with responsive layouts.",
               link: "https://bravo-nextjs-portfolio-h6mrsg0lc.vercel.app/",
             },
-
             {
               title: "Grocery Cart App",
               img: "/groceryApp.jpg",
@@ -47,7 +44,6 @@ export default function Projects() {
               solution: "Implemented real-time database structure properly.",
               link: "https://flutlab.io/editor/9c5e9a06-0449-42ac-8f06-1cb2fc5532e9",
             },
-
             {
               title: "Cignal Database Project",
               img: "/cignaldb.jpg",
@@ -57,7 +53,6 @@ export default function Projects() {
               solution: "Refactored schema using normalization principles.",
               link: "#",
             },
-
             {
               title: "Focus Planner App",
               img: "/focusPlannerApp.jpg",
@@ -67,7 +62,6 @@ export default function Projects() {
               solution: "Simplified UX using clean hierarchy in Figma.",
               link: "https://github.com/damedreamy/Focus-Planner-Application.git",
             },
-
             {
               title: "Ghostly Adventure Game",
               img: "/mazeGame.jpg",
@@ -77,18 +71,11 @@ export default function Projects() {
               solution: "Debugged core game loop and collision system.",
               link: "https://github.com/damedreamy/Ghostly-Adventure-Game.git",
             },
-
           ].map((project, i) => (
             <div
               key={i}
-              className="
-                group relative bg-white/5 backdrop-blur-md
-                border border-white/10 rounded-2xl overflow-hidden
-                hover:scale-[1.02] transition duration-300
-                hover:shadow-[0_0_30px_rgba(236,72,153,0.25)]
-              "
+              className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition duration-300 hover:shadow-[0_0_30px_rgba(236,72,153,0.25)]"
             >
-
               {/* IMAGE */}
               <div className="relative w-full h-52 overflow-hidden">
                 <Image
@@ -102,7 +89,6 @@ export default function Projects() {
 
               {/* CONTENT */}
               <div className="p-5 space-y-3">
-
                 <h3 className="text-xl font-semibold text-pink-400">
                   {project.title}
                 </h3>
@@ -117,28 +103,35 @@ export default function Projects() {
 
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="
-                    mt-3 px-4 py-2 rounded-xl font-medium
-                    bg-gradient-to-r from-pink-500 to-purple-600
-                    hover:from-purple-600 hover:to-pink-500
-                    transition
-                    shadow-[0_0_15px_rgba(236,72,153,0.4)]
-                  "
+                  className="mt-3 px-4 py-2 rounded-xl font-medium bg-gradient-to-r from-pink-500 to-purple-600 hover:from-purple-600 hover:to-pink-500 transition shadow-[0_0_15px_rgba(236,72,153,0.4)]"
                 >
                   Read More
                 </button>
-
               </div>
             </div>
           ))}
-
         </div>
+
+        {/* CTA */}
+        <div className="text-center space-y-4">
+          <p className="text-pink-300">
+            Curious to see more of what I’ve built?
+          </p>
+
+          <a
+            href="https://github.com/damedreamy"
+            target="_blank"
+            className="inline-block bg-pink-700/60 border border-pink-500 px-6 py-3 rounded-xl text-white font-medium hover:bg-pink-700 transition shadow-md"
+          >
+            Visit my Github
+          </a>
+        </div>
+
       </div>
 
-
+      {/* MODAL */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 px-4">
-
           <div className="bg-white/5 border border-white/10 backdrop-blur-xl p-6 rounded-2xl max-w-lg w-full relative shadow-[0_0_40px_rgba(236,72,153,0.25)]">
 
             <button
@@ -173,20 +166,13 @@ export default function Projects() {
             <a
               href={selectedProject.link}
               target="_blank"
-              className="
-                inline-block px-5 py-2 rounded-xl font-medium
-                bg-gradient-to-r from-cyan-400 to-pink-500
-                hover:from-pink-500 hover:to-cyan-400
-                transition
-                shadow-[0_0_20px_rgba(34,211,238,0.4)]
-              "
+              className="inline-block px-5 py-2 rounded-xl font-medium bg-gradient-to-r from-cyan-400 to-pink-500 hover:from-pink-500 hover:to-cyan-400 transition shadow-[0_0_20px_rgba(34,211,238,0.4)]"
             >
               View Project
             </a>
           </div>
         </div>
       )}
-
-    </main>
+    </section>
   );
 }

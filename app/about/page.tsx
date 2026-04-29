@@ -1,14 +1,17 @@
+
 import Image from "next/image";
 
 export default function AboutMe() {
   return (
-    <main id="about" className="min-h-screen bg-[#0f0f14] text-gray-200 px-6 py-16 flex justify-center">
+  
+        
+    <main id="about" className="min-h-screen text-gray-200 px-6 py-16 flex justify-center">
 
       <div className="max-w-5xl w-full space-y-16">
 
         {/* HEADER */}
         <section className="text-center space-y-3">
-          <h2 className="text-4xl font-bold text-pink-500">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
             About Me
           </h2>
         </section>
@@ -28,7 +31,7 @@ export default function AboutMe() {
           <p>
             I specialize in modern web technologies like{" "}
             <span className="text-pink-400">
-              Next.js, JavaScript/TypeScript, and SQL
+              Next.js, TypeScript, and SQL
             </span>
             , creating clean interfaces and efficient backend systems.
           </p>
@@ -51,7 +54,7 @@ export default function AboutMe() {
             My Technical Skills
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
 
             {/* FRONTEND */}
             <div className="bg-[#1a1a22] p-6 rounded-2xl shadow-md shadow-pink-500/10 space-y-4 text-center">
@@ -109,6 +112,23 @@ export default function AboutMe() {
 
             </div>
 
+
+
+          </div>
+        </section>
+
+        {/* OTHER SKILLS */}
+        <section className="space-y-8">
+
+          <h3 className="text-2xl font-semibold text-center text-white">
+            Other Skills
+          </h3>
+
+
+
+          <div className="grid md:grid-cols-3 gap-6">
+
+
             {/* DATABASE */}
             <div className="bg-[#1a1a22] p-6 rounded-2xl shadow-md shadow-pink-500/10 space-y-4 text-center">
 
@@ -128,18 +148,6 @@ export default function AboutMe() {
               </div>
 
             </div>
-
-          </div>
-        </section>
-
-        {/* OTHER SKILLS */}
-        <section className="space-y-8">
-
-          <h3 className="text-2xl font-semibold text-center text-white">
-            Other Skills
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
 
             {/* NETWORKING */}
             <div className="bg-[#1a1a22] p-6 rounded-2xl shadow-md shadow-pink-500/10 space-y-4 text-center">
@@ -164,6 +172,8 @@ export default function AboutMe() {
               </div>
 
             </div>
+
+        
 
             {/* SECURITY */}
             <div className="bg-[#1a1a22] p-6 rounded-2xl shadow-md shadow-pink-500/10 space-y-4 text-center">
@@ -192,7 +202,7 @@ export default function AboutMe() {
           </div>
         </section>
 
-
+        {/* CTA */}
         <section className="text-center space-y-5">
 
           <p className="text-pink-500">
@@ -215,5 +225,6 @@ export default function AboutMe() {
 
       </div>
     </main>
+
   );
 }

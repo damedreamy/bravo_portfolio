@@ -1,12 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useSpring,
-} from "motion/react";
+import { motion, useTransform, useScroll, useSpring } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export const TracingBeam = ({
@@ -53,18 +48,11 @@ export const TracingBeam = ({
   );
 
   return (
-    <motion.div
-      ref={ref}
-      className={cn("relative w-full", className)}
-    >
+    <motion.div ref={ref} className={cn("relative w-full", className)}>
 
+      {/* BEAM (no dot anymore) */}
       <div className="absolute top-0 left-0">
-        {/* DOT */}
-        <div className="flex h-4 w-4 items-center justify-center rounded-full border">
-          <div className="h-2 w-2 rounded-full bg-white" />
-        </div>
 
-        {/* SVG BEAM */}
         <svg
           viewBox={`0 0 20 ${safeHeight}`}
           width="20"
@@ -101,12 +89,14 @@ export const TracingBeam = ({
             </motion.linearGradient>
           </defs>
         </svg>
+
       </div>
 
       {/* CONTENT */}
       <div ref={contentRef} className="pl-10 md:pl-16">
         {children}
       </div>
+
     </motion.div>
   );
 };

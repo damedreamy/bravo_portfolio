@@ -15,12 +15,8 @@ export default function Hero() {
 <div className="absolute inset-0 -m-6 rounded-3xl bg-black/20 backdrop-blur-md">
 
 
-  <div className="pointer-events-none absolute inset-0 rounded-3xl p-[1px] 
-    bg-gradient-to-r from-transparent via-white/10 to-transparent 
-    [mask:linear-gradient(#000,#000)_content-box,linear-gradient(#000,#000)] 
-    [mask-composite:exclude]">
-  </div>
 
+<div className="absolute inset-0 -m-6 rounded-3xl bg-black/20 backdrop-blur-md" />
 </div>
             {/* CONTENT ON TOP */}
             <div className="relative flex flex-col gap-6 p-6 md:p-10">

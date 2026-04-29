@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <TracingBeam>
       <main className="text-white min-h-screen pb-40">
-
         {/* HERO */}
         <section id="hero">
           <Hero />
@@ -30,14 +29,7 @@ export default function Home() {
         <section id="contact">
           <Contact />
         </section>
-
       </main>
     </TracingBeam>
   );
 }
-
-
-// npx shadcn@latest add @aceternity/vortex
-// npx shadcn@latest add @aceternity/background-gradient 
-// npx shadcn@latest add @aceternity/tracing-beam
-// npx shadcn@latest add @aceternity/glowing-effect

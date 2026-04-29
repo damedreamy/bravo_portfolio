@@ -132,3 +132,7 @@ html {
     @apply font-sans;
   }
 }
+
+/* npx shadcn@latest add @aceternity/vortex
+npx shadcn@latest add @aceternity/background-gradient 
+npx shadcn@latest add @aceternity/tracing-beam */

@@ -25,7 +25,7 @@ export default function Hero() {
             {/* CONTENT ON TOP */}
             <div className="relative flex flex-col gap-6 p-6 md:p-10">
 
-              <h3 className="font-medium text-sm tracking-widest uppercase text-cyan-400 drop-shadow-[0_0_8px_#00f5ff]">
+              <h3 className="font-medium text-sm tracking-widest uppercase text-pink-300 drop-shadow-[0_0_8px_#00f5ff]">
                 Welcome to My Portfolio ⚡
               </h3>
 
@@ -42,24 +42,36 @@ export default function Hero() {
 
               {/* BUTTONS */}
               <div className="flex gap-4 mt-4 flex-wrap">
-
                 <a
                   href="/#projects"
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 
-                  shadow-[0_0_15px_rgba(0,255,255,0.6)] 
-                  hover:shadow-[0_0_30px_rgba(0,255,255,1)] 
-                  transition duration-300"
+                  className="px-6 py-3 rounded-xl 
+                  bg-gradient-to-r from-purple-500 via-pink-300 to-pink-400 
+                  
+                  shadow-[0_0_20px_rgba(168,85,247,0.6)] 
+                  hover:shadow-[0_0_45px_rgba(236,72,153,0.9)]
+                  transform hover:scale-105 active:scale-95
+                  transition-transform duration-300 ease-out
+                  cursor-pointer relative z-50"
                 >
                   See my Projects
                 </a>
 
+
+
                 <a
                   href="/DAME'S_CV.pdf"
                   download
-                  className="px-6 py-3 rounded-xl border border-cyan-400 
-                  shadow-[0_0_10px_rgba(0,255,255,0.4)] 
-                  hover:shadow-[0_0_25px_rgba(0,255,255,0.9)] 
-                  hover:bg-cyan-400/10 transition duration-300"
+                  className="px-6 py-3 rounded-xl 
+                  border border-pink-400
+                  bg-white/5 backdrop-blur-md
+                  shadow-[0_0_28px_rgba(236,72,153,0.35)]
+  
+                  hover:border-pink-300
+                  hover:shadow-[0_0_34px_rgba(236,72,153,0.45)]
+                  hover:bg-pink-500/15
+                  transform hover:scale-105 active:scale-95
+                  transition-transform duration-300 ease-out
+                  cursor-pointer relative z-50"
                 >
                   Download CV
                 </a>

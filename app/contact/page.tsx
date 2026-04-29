@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
+
 
 export default function Contact() {
   return (
-    <main className="min-h-screen px-6 md:px-20 py-24 bg-black text-white relative overflow-hidden">
+    <main>
 
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -15,7 +17,7 @@ export default function Contact() {
           </h1>
 
           <p className="text-gray-400 max-w-xl mx-auto">
-           Want to collaborate, build something great, or just say hi? <br /> I’d love to hear from you.
+            Want to collaborate, build something great, or just say hi? <br /> I’d love to hear from you.
           </p>
         </div>
 
@@ -45,11 +47,11 @@ export default function Contact() {
 
 
             {/* ROLE */}
-            <p className="text-gray-300 max-w-sm">
+            <p className="text-yellow-200 max-w-sm">
               Full Stack Developer · Mobile Developer · Database Designer · UI/UX Designer
             </p>
 
-                        <p className="text-gray-300 max-w-sm">
+            <p className="text-gray-300 max-w-sm">
               📩 rencessdame18@gmail.com <br />
               📍 Iloilo City, Philippines
             </p>
@@ -85,53 +87,57 @@ export default function Contact() {
           </div>
 
           {/* RIGHT SIDE - FORM */}
-          <form
-            className="
+          <BackgroundGradient className="rounded-2xl h-full">
+            <form
+              className="
               space-y-5
-              bg-white/5 backdrop-blur-md
+              bg-[#1a1a22] backdrop-blur-md
               border border-white/10
               p-8 rounded-2xl
               shadow-[0_0_30px_rgba(236,72,153,0.15)]
             "
-          >
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/40 outline-none"
-            />
-
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none"
-            />
-
-            <input
-              type="text"
-              placeholder="Subject"
-              className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/40 outline-none"
-            />
-
-            <textarea
-              placeholder="Your Message"
-              rows={5}
-              className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/40 outline-none resize-none"
-            />
-
-            <button
-              type="submit"
-              className="
-                w-full py-3 rounded-xl font-medium
-                bg-gradient-to-r from-pink-500 to-purple-600
-                hover:from-purple-600 hover:to-pink-500
-                transition
-                shadow-[0_0_25px_rgba(236,72,153,0.5)]
-              "
             >
-              Send Message ⚡
-            </button>
-          </form>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/40 outline-none"
+              />
 
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/40 outline-none"
+              />
+
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/40 outline-none"
+              />
+
+              <textarea
+                placeholder="Your Message"
+                rows={5}
+                className="w-full p-3 rounded-xl bg-black/40 border border-white/10 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/40 outline-none resize-none"
+              />
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="
+      px-7 py-3 rounded-xl font-medium text-white
+      bg-gradient-to-r from-purple-400 to-pink-400
+      shadow-[0_0_20px_rgba(34,211,238,0.25)]
+      transition-all duration-500 ease-out
+      hover:from-green-400 hover:to-green-600
+      hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]
+      active:scale-[0.97]
+    "
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+          </BackgroundGradient>
 
 
         </div>

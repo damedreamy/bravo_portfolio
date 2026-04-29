@@ -6,12 +6,25 @@ import Image from "next/image";
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
+  const cardClass =
+    "group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden " +
+    "transition-all duration-500 ease-out " +
+    "hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(236,72,153,0.25)]";
+
+  const githubButton =
+    "inline-flex items-center justify-center text-lg font-semibold " +
+    "px-8 py-4 rounded-xl text-white border border-pink-400 bg-pink-500/10 " +
+    "shadow-[0_0_28px_rgba(236,72,153,0.35)] " +
+    "transition-all duration-500 ease-out " +
+    "hover:border-pink-300 hover:shadow-[0_0_34px_rgba(236,72,153,0.45)] " +
+    "hover:bg-pink-500/15 hover:-translate-y-[2px] active:scale-[0.97]";
+
   return (
     <section
       id="projects"
       className="min-h-screen px-6 md:px-20 py-24 text-white relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto relative z-10 space-y-16">
+      <div className="max-w-6xl mx-auto space-y-16">
 
         {/* HEADER */}
         <div className="text-center space-y-4">
@@ -20,11 +33,12 @@ export default function Projects() {
           </h2>
 
           <p className="text-gray-400 max-w-xl mx-auto">
- A collection of my projects demonstrating my skills in development, design, and problem-solving.          </p>
+            A collection of my projects demonstrating my skills in development, design, and problem-solving.
+          </p>
         </div>
 
         {/* GRID */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 ">
           {[
             {
               title: "My First Portfolio",
@@ -72,19 +86,16 @@ export default function Projects() {
               link: "https://github.com/damedreamy/Ghostly-Adventure-Game.git",
             },
           ].map((project, i) => (
-            <div
-              key={i}
-              className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition duration-300 hover:shadow-[0_0_30px_rgba(236,72,153,0.25)]"
-            >
+            <div key={i} className={cardClass}>
               {/* IMAGE */}
               <div className="relative w-full h-52 overflow-hidden">
                 <Image
                   src={project.img}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition duration-500"
+                  className="object-cover transition duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               </div>
 
               {/* CONTENT */}
@@ -93,17 +104,13 @@ export default function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-gray-300 text-sm">
-                  {project.desc}
-                </p>
+                <p className="text-gray-300 text-base">{project.desc}</p>
 
-                <p className="text-xs text-cyan-300">
-                  {project.tech}
-                </p>
+                <p className="text-sm text-cyan-300">{project.tech}</p>
 
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="mt-3 px-4 py-2 rounded-xl font-medium bg-gradient-to-r from-pink-500 to-purple-600 hover:from-purple-600 hover:to-pink-500 transition shadow-[0_0_15px_rgba(236,72,153,0.4)]"
+                  className="mt-3 px-4 py-2 rounded-xl font-medium bg-pink-500/20 border border-pink-500/30 text-pink-300 hover:text-white hover:bg-pink-500/30 transition"
                 >
                   Read More
                 </button>
@@ -113,62 +120,61 @@ export default function Projects() {
         </div>
 
         {/* CTA */}
-        <div className="text-center space-y-4">
-          <p className="text-pink-300">
+        <div className="text-center space-y-5">
+          <p className="text-pink-300 text-lg">
             Curious to see more of what I’ve built?
           </p>
 
           <a
             href="https://github.com/damedreamy"
             target="_blank"
-            className="inline-block bg-pink-700/60 border border-pink-500 px-6 py-3 rounded-xl text-white font-medium hover:bg-pink-700 transition shadow-md"
+            className={githubButton}
           >
             Visit my Github
           </a>
         </div>
-
       </div>
 
       {/* MODAL */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 px-4">
-          <div className="bg-white/5 border border-white/10 backdrop-blur-xl p-6 rounded-2xl max-w-lg w-full relative shadow-[0_0_40px_rgba(236,72,153,0.25)]">
+          <div className="bg-white/5 border border-white/10 backdrop-blur-xl p-5 rounded-2xl max-w-lg w-full relative shadow-[0_0_40px_rgba(236,72,153,0.25)]">
 
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-3 right-3 text-gray-400 hover:text-white"
+              className="absolute top-3 right-3 text-white hover:text-red-400"
             >
               ✕
             </button>
 
-            <h2 className="text-2xl font-bold text-pink-400 mb-3">
+            <h2 className="text-2xl font-bold text-pink-300 mb-3 text-center">
               {selectedProject.title}
             </h2>
 
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-300 text-center mb-4">
               {selectedProject.desc}
             </p>
 
-            <p className="text-sm text-gray-400 mb-2">
-              <span className="text-white font-semibold">Problem:</span>{" "}
+            <p className="text-sm text-white mb-2">
+              <span className="text-red-400 font-semibold">Problem:</span>{" "}
               {selectedProject.problem}
             </p>
 
-            <p className="text-sm text-gray-400 mb-4">
-              <span className="text-white font-semibold">Solution:</span>{" "}
+            <p className="text-sm text-white mb-4">
+              <span className="text-green-400 font-semibold">Solution:</span>{" "}
               {selectedProject.solution}
             </p>
 
             <p className="text-sm text-cyan-300 mb-6">
-              Tech: {selectedProject.tech}
+              Language: {selectedProject.tech}
             </p>
 
             <a
               href={selectedProject.link}
               target="_blank"
-              className="inline-block px-5 py-2 rounded-xl font-medium bg-gradient-to-r from-cyan-400 to-pink-500 hover:from-pink-500 hover:to-cyan-400 transition shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-xl font-medium text-white bg-pink-500/20 border border-pink-500/30 hover:bg-pink-500/30 transition shadow-[0_0_20px_rgba(236,72,153,0.25)]"
             >
-              View Project
+              View Code
             </a>
           </div>
         </div>

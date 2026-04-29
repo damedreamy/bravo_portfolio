@@ -1,33 +1,43 @@
+"use client";
+
 import Projects from "./projects/page";
 import Contact from "./contact/page";
 import AboutMe from "./about/page";
 import Hero from "./Hero/page";
-
-
+import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export default function Home() {
   return (
-    <main className="text-white">
+    <TracingBeam>
+      <main className="text-white min-h-screen pb-40">
 
-      {/* HERO */}
-      <section id="hero"><Hero /></section>
+        {/* HERO */}
+        <section id="hero">
+          <Hero />
+        </section>
 
-      {/* ABOUT */}
-      <section id="about">
-        <AboutMe />
-      </section>
+        {/* ABOUT */}
+        <section id="about">
+          <AboutMe />
+        </section>
 
-      {/* PROJECTS */}
-      <section id="projects">
-        <Projects />
-      </section>
+        {/* PROJECTS */}
+        <section id="projects">
+          <Projects />
+        </section>
 
+        {/* CONTACT */}
+        <section id="contact">
+          <Contact />
+        </section>
 
-      {/* CONTACT */}
-      <section id="contact">
-        <Contact />
-      </section>
-
-    </main>
+      </main>
+    </TracingBeam>
   );
 }
+
+
+// npx shadcn@latest add @aceternity/vortex
+// npx shadcn@latest add @aceternity/background-gradient 
+// npx shadcn@latest add @aceternity/tracing-beam
+// npx shadcn@latest add @aceternity/glowing-effect
